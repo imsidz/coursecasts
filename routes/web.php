@@ -14,6 +14,10 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+
+    URL::forceSchema('https');
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
