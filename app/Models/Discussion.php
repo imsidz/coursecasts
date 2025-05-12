@@ -13,10 +13,14 @@ class Discussion extends Model
     use Searchable;
 
     protected $fillable = [
+        'user_id',
+        'topic_id',
         'title',
-        'slug'
+        'slug',
+        'created_at',
+        'updated_at',
     ];
-
+    
     public function toSearchableArray()
     {
         return $this->only('id', 'title');
@@ -41,13 +45,20 @@ class Discussion extends Model
 
     public function scopeOrderByLastPost($query)
     {
-        $query->orderBy(
+        $query
+        ->where('visible', true)
+        ->orderBy(
             Post::select('created_at')
                 ->whereColumn('posts.discussion_id', 'discussions.id')
                 ->latest()
                 ->take(1),
-            'desc'
+            'asc'
         );
+    }
+
+    public function scopeVisible($query)
+    {   
+    return $query->where('visible', true);
     }
 
     public function isPinned()

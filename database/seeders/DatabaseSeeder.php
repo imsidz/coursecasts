@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\Topic;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str; 
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,29 +15,35 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        //  \App\Models\User::factory(40)->create();
 
-        if (!User::where('email', 'test@example.com')->first()) {
-            User::factory()->create([
-                'username' => 'Test User',
-                'email' => 'test@example.com',
-            ]);
-        }
+        $this->call([
+            // UsersTableSeeder::class,
+            // PostsTableSeeder::class,
+            RealisticPostsSeeder::class,
+        ]);
+
+        // if (!User::where('email', 'test@example.com')->first()) {
+        //     User::factory()->create([
+        //         'username' => 'Test User',
+        //         'email' => 'test@example.com',
+        //     ]);
+        // }
         
-        Topic::firstOrCreate(
-            ['slug' => 'php'], 
-            ['title' => 'PHP'] 
-        );
+        // Topic::firstOrCreate(
+        //     ['slug' => 'php'], 
+        //     ['title' => 'PHP'] 
+        // );
         
-        Topic::firstOrCreate(
-            ['slug' => 'javascript'],
-            ['title' => 'Javascript']
-        );
+        // Topic::firstOrCreate(
+        //     ['slug' => 'javascript'],
+        //     ['title' => 'Javascript']
+        // );
         
-        Topic::firstOrCreate(
-            ['slug' => 'css'],
-            ['title' => 'CSS']
-        );
+        // Topic::firstOrCreate(
+        //     ['slug' => 'css'],
+        //     ['title' => 'CSS']
+        // );
         
     }
 }

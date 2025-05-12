@@ -14,6 +14,7 @@ class DiscussionShowController extends Controller
 
     public function __invoke(Request $request, Discussion $discussion)
     {
+      
         if ($postId = $request->get('post')) {
             return redirect()->route('discussions.show', [
                 'discussion' => $discussion,
@@ -23,13 +24,22 @@ class DiscussionShowController extends Controller
         }
 
         $discussion->load(['topic', 'posts.discussion', 'solution']);
+       
         $discussion->loadCount('replies');
 
+//         $posts = Post::whereBelongsTo($discussion)
+//     ->with(['user', 'discussion'])
+//     ->oldest()
+//     ->paginate(self::POSTS_PER_PAGE);
+
+// dd($posts->first());
+  
         return inertia()->render('Forum/Show', [
             'query' => $request->query(),
             'discussion' => DiscussionResource::make($discussion),
             'posts' => PostResource::collection(
                 Post::whereBelongsTo($discussion)
+                ->where('visible', 1) 
                     ->with(['user', 'discussion'])
                     ->oldest()
                     ->paginate(self::POSTS_PER_PAGE)
