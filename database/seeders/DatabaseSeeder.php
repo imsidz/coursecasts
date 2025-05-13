@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             // UsersTableSeeder::class,
             // PostsTableSeeder::class,
-            RealisticPostsSeeder::class,
+            HAProxyLoadBalancingSeeder::class,
         ]);
 
         // if (!User::where('email', 'test@example.com')->first()) {

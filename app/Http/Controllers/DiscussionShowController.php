@@ -27,13 +27,6 @@ class DiscussionShowController extends Controller
        
         $discussion->loadCount('replies');
 
-//         $posts = Post::whereBelongsTo($discussion)
-//     ->with(['user', 'discussion'])
-//     ->oldest()
-//     ->paginate(self::POSTS_PER_PAGE);
-
-// dd($posts->first());
-  
         return inertia()->render('Forum/Show', [
             'query' => $request->query(),
             'discussion' => DiscussionResource::make($discussion),
