@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str; 
 
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -20,7 +21,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             // UsersTableSeeder::class,
             // PostsTableSeeder::class,
-            HAProxyLoadBalancingSeeder::class,
+            // HAProxyLoadBalancingSeeder::class,
+           // WebScrapingDiscussionSeeder::class,
+            PhpDiscussionSeeder::class
         ]);
 
         // if (!User::where('email', 'test@example.com')->first()) {

@@ -103,7 +103,7 @@ class Discussion extends Model
     {
         return $this->hasManyThrough(User::class, Post::class, 'discussion_id', 'id', 'id', 'user_id')
         ->where('posts.visible', true)
-        ->distinct();
+            ->distinct();
     }
 
     public function solution()
