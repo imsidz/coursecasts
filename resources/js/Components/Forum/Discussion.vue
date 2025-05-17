@@ -37,7 +37,8 @@
             <div class="flex-shrink-0 flex flex-col items-end">
                 <div class="flex items-center justify-start -space-x-1">
                     <img :src="participant.avatar_url" v-for="participant in participants" :key="participant.id" class="h-6 w-6 rounded-full ring-2 ring-white first-of-type:w-7 first-of-type:h-7" :title="participant.username">
-                    <span class="!ml-1 text-sm text-gray-600" v-if="discussion.participants.length > 3">+ {{ discussion.participants.length - 3 }} more</span>
+                  
+                    <span class="!ml-1 text-sm text-gray-600" v-if="discussion.participants.length > 3">+ {{ discussion.participants.length  }} more</span>
                 </div>
 
                 <div class="text-sm mt-3">
