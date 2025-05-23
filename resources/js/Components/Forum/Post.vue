@@ -12,7 +12,13 @@
             <div>
                 <div>{{ post.user?.username || '[user deleted]' }}</div>
                 {{ post.visible }}
-                <div class="text-sm text-gray-500">Posted <time :datetime="post.created_at.datetime" :title="post.created_at.datetime">{{ post.created_at.human }}</time></div>
+                <div class="text-sm text-gray-500">Posted 
+                    <time 
+                    :datetime="post.created_at.datetime" 
+                    :title="post.created_at.datetime">
+                        {{ formatFullTime(post.created_at.datetime) }}
+                </time>
+            </div>
             </div>
             <div class="mt-3">
                 <form v-on:submit.prevent="editPost" v-if="editing">
@@ -69,6 +75,13 @@ const props = defineProps({
     post: Object,
     isSolution: Boolean
 })
+const formatFullTime = (iso) => {
+    const date = new Date(iso);
+    return new Intl.DateTimeFormat('default', {
+        dateStyle: 'medium',
+        timeStyle: 'short'
+    }).format(date);
+};
 
 const { showCreatePostForm } = useCreatePost()
 

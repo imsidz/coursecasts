@@ -18,14 +18,15 @@ class DatabaseSeeder extends Seeder
     {
         //  \App\Models\User::factory(40)->create();
 
-        $this->call([
-            // UsersTableSeeder::class,
-            // PostsTableSeeder::class,
-            // HAProxyLoadBalancingSeeder::class,
-           // WebScrapingDiscussionSeeder::class,
-            PhpDiscussionSeeder::class
-        ]);
+        // $this->call([
+        //     // UsersTableSeeder::class,
+        //     // PostsTableSeeder::class,
+        //     // HAProxyLoadBalancingSeeder::class,
+        //    // WebScrapingDiscussionSeeder::class,
+        //    DRSeeder::class
+        // ]);
 
+        $this->call(APISeeder::class);
         // if (!User::where('email', 'test@example.com')->first()) {
         //     User::factory()->create([
         //         'username' => 'Test User',
@@ -47,6 +48,8 @@ class DatabaseSeeder extends Seeder
         //     ['slug' => 'css'],
         //     ['title' => 'CSS']
         // );
+
+        
         
     }
 }
