@@ -33,4 +33,9 @@ class Post extends Model
         return $this->belongsToMany(User::class, 'mentions', 'post_id')
             ->withTimestamps();
     }
+
+    public function tags()
+    {
+    return $this->belongsToMany(Tag::class);
+    }
 }
