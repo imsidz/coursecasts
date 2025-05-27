@@ -23,20 +23,20 @@ class ForumIndexController extends Controller
             'query' => (object) $request->query(),
 
             'discussions' => DiscussionResource::collection(
-                QueryBuilder::for(Discussion::class)
-                    ->allowedFilters($this->allowedFilters())
-                    ->with(['topic', 'post', 'latestPost.user', 'participants'])
-                    ->withCount('replies')
-                    ->orderByPinned()
-                    ->orderByLastPost()
-                    ->tap(function ($builder) use ($request) {
-                        if (filled($request->search)) {
-                            return $builder->whereIn('id', Discussion::search($request->search)->get()->pluck('id'));
-                        }
-                    })
-                    ->paginate(10)
-                    ->appends($request->query())
-            )
+             QueryBuilder::for(Discussion::query()->where('visible', true))
+        ->allowedFilters($this->allowedFilters())
+        ->with(['topic', 'post', 'latestPost.user', 'participants'])
+        ->withCount('replies')
+        ->orderByPinned()
+        ->orderByLastPost()
+        ->tap(function ($builder) use ($request) {
+            if (filled($request->search)) {
+                return $builder->whereIn('id', Discussion::search($request->search)->get()->pluck('id'));
+            }
+        })
+        ->paginate(10)
+        ->appends($request->query())
+)
         ]);
     }
 
@@ -47,7 +47,6 @@ class ForumIndexController extends Controller
             AllowedFilter::custom('topic', new TopicQueryFilter()),
             AllowedFilter::custom('solved', new SolvedQueryFilter()),
             AllowedFilter::custom('unsolved', new UnsolvedQueryFilter()),
-
             AllowedFilter::custom('mine', new MineQueryFilter()),
             AllowedFilter::custom('participating', new ParticipatingQueryFilter()),
             AllowedFilter::custom('mentioned', new MentionedQueryFilter()),

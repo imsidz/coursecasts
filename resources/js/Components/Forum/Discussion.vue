@@ -1,5 +1,7 @@
 <template>
-    <Link :href="route('discussions.show', discussion)" class="block bg-white overflow-hidden shadow-sm sm:rounded-lg">
+    <Link 
+    v-if="discussion.visible"
+    :href="route('discussions.show', discussion)" class="block bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 text-gray-900 flex items-center space-x-6">
             <div class="flex-grow">
                 <div class="flex items-center space-x-3">
@@ -15,12 +17,22 @@
                 </div>
 
                 <div class="text-gray-500 text-sm mt-3 line-clamp-1">
-                    {{ discussion.post.body_preview }}
+                    {{ discussion?.body_preview }}
                 </div>
 
-                <Link :href="`${route('discussions.show', discussion)}?post=${discussion.latest_post.id}`" class="inline-block text-sm mt-3">
-                    Last post by {{ discussion.latest_post.user?.username || '[user deleted]' }} <time :datetime="discussion.latest_post.created_at.datetime" :title="discussion.latest_post.created_at.datetime">{{ discussion.latest_post.created_at.human }}</time>
-                </Link>
+                <Link
+  v-if="discussion?.latest_post"
+  :href="`${route('discussions.show', discussion)}?post=${discussion.latest_post.id}`"
+  class="inline-block text-sm mt-3"
+>
+  Last post by {{ discussion.latest_post.user?.username || '[user deleted]' }}
+  <time
+    :datetime="discussion.latest_post.created_at.datetime"
+    :title="discussion.latest_post.created_at.datetime"
+  >
+    {{ discussion.latest_post.created_at.human }}
+  </time>
+</Link>
             </div>
             <div class="flex-shrink-0 flex flex-col items-end">
                 <div class="flex items-center justify-start -space-x-1">
