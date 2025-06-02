@@ -54,4 +54,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(UserMention::class, 'id');
     }
+
+    public function topicGroups()
+{
+    return $this->belongsToMany(TopicGroup::class);
+}
 }

@@ -13,4 +13,10 @@ class Topic extends Model
         'title',
         'slug'
     ];
+
+    public function groups()
+    {
+    return $this->belongsToMany(TopicGroup::class, 'topic_group_topic', 'topic_id', 'topic_group_id');
+    }
+
 }

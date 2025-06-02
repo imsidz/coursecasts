@@ -4,13 +4,15 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\TopicGroup;
 use App\Models\Topic;
 
-class TopicGroupTopicSeeder extends Seeder
+class TopicGroupsAndAssignmentsSeeder extends Seeder
 {
     public function run(): void
     {
-        // Define groupings
+        $this->command->info('🔧 Seeding topic groups...');
+
         $groupTopics = [
             'Distributed Systems' => ['Distributed Systems'],
             'APIs & Integration' => ['API'],
@@ -28,25 +30,33 @@ class TopicGroupTopicSeeder extends Seeder
             'Search Technology' => ['Search Engine'],
         ];
 
-        // Get group IDs
-        $groups = DB::table('topic_groups')->pluck('id', 'name');
+        // Create topic groups
+        foreach (array_keys($groupTopics) as $groupName) {
+            TopicGroup::firstOrCreate(['name' => $groupName]);
+        }
+
+        $this->command->info('🔗 Assigning topics to groups...');
 
         foreach ($groupTopics as $groupName => $topicNames) {
-            $groupId = $groups[$groupName] ?? null;
+            $group = TopicGroup::where('name', $groupName)->first();
 
-            if ($groupId) {
-                foreach ($topicNames as $topicName) {
-                    $topic = Topic::where('name', $topicName)->first();
-                    if ($topic) {
-                        DB::table('topic_group_topic')->updateOrInsert([
-                            'topic_group_id' => $groupId,
-                            'topic_id' => $topic->id,
-                        ]);
-                    }
+            if (!$group) {
+                $this->command->warn("⚠️ Topic group '{$groupName}' not found.");
+                continue;
+            }
+
+            foreach ($topicNames as $topicName) {
+                $topic = Topic::where('title', $topicName)->first(); // ✅ use 'name' instead of 'title'
+
+                if (!$topic) {
+                    $this->command->warn("⚠️ Topic '{$topicName}' not found.");
+                    continue;
                 }
+
+                $group->topics()->syncWithoutDetaching([$topic->id]);
             }
         }
 
-        $this->command->info("✅ Assigned topics to their respective groups.");
+        $this->command->info("✅ Topic groups and topic assignments seeded successfully.");
     }
 }
