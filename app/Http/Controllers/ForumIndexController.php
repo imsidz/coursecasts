@@ -23,7 +23,8 @@ class ForumIndexController extends Controller
             'query' => (object) $request->query(),
 
             'discussions' => DiscussionResource::collection(
-             QueryBuilder::for(Discussion::query()->where('visible', true))
+             QueryBuilder::for(Discussion::query()->where('visible', true)
+                 ->orderBy('created_at', 'desc'))
         ->allowedFilters($this->allowedFilters())
         ->with(['topic', 'post', 'latestPost.user', 'participants'])
         ->withCount('replies')
@@ -52,4 +53,24 @@ class ForumIndexController extends Controller
             AllowedFilter::custom('mentioned', new MentionedQueryFilter()),
         ];
     }
+
+    public function approvedPostsCount()
+{
+    return $this->posts()->where('visible', true)->count();
+}
+
+public function approvedDiscussionsCount()
+{
+    return $this->discussions()->where('visible', true)->count();
+}
+
+public function canAutoApprovePosts()
+{
+    return $this->hasPermissionTo('auto-approve-posts') || $this->approvedPostsCount() >= 10;
+}
+
+public function canAutoApproveDiscussions()
+{
+    return $this->hasPermissionTo('auto-approve-discussions') || $this->approvedDiscussionsCount() >= 10;
+}
 }
