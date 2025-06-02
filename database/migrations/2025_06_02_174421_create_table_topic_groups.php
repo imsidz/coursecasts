@@ -4,24 +4,20 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateTopicTopicGroupTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        Schema::create('table_topic_groups', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('topic_topic_group', function (Blueprint $table) {
+            $table->foreignId('topic_id')->constrained()->onDelete('cascade');
+            $table->foreignId('topic_group_id')->constrained()->onDelete('cascade');
+            $table->primary(['topic_id', 'topic_group_id']);
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('table_topic_groups');
+        Schema::dropIfExists('topic_topic_group');
     }
-};
+}
+
