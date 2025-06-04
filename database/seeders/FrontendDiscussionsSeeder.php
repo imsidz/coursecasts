@@ -28,12 +28,12 @@ class FrontendDiscussionsSeeder extends Seeder
                 'topic_id' => $topicId,
                 'title' => $data['title'],
                 'slug' => $data['slug'] ?? Str::slug($data['title']),
-                'visible' => true,
+                'visible' => false, // 👈 Make discussion invisible
                 'created_at' => $createdAt,
                 'updated_at' => $updatedAt,
             ]);
         }
 
-        $this->command->info('✅ Frontend discussions seeded successfully.');
+        $this->command->info('✅ Frontend discussions seeded successfully with visibility set to false.');
     }
 }
