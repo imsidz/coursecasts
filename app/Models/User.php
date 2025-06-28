@@ -8,10 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Scout\Searchable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable,HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -53,4 +54,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne(UserMention::class, 'id');
     }
+
+    public function topicGroups()
+{
+    return $this->belongsToMany(TopicGroup::class);
+}
 }

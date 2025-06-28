@@ -11,7 +11,7 @@
         <div class="w-full">
             <div>
                 <div>{{ post.user?.username || '[user deleted]' }}</div>
-                {{ post.visible }}
+            
                 <div class="text-sm text-gray-500">Posted 
                     <time 
                     :datetime="post.created_at.datetime" 

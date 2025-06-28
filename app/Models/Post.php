@@ -9,6 +9,10 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $attributes = [
+    'visible' => false,
+    ];
+
     protected $fillable = [
         'body'
     ];

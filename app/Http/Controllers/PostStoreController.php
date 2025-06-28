@@ -11,7 +11,10 @@ class PostStoreController extends Controller
 {
     public function __invoke(PostStoreRequest $request, Discussion $discussion)
     {
-        $post = Post::make($request->validated());
+        $post = Post::make(array_merge(
+        $request->validated(),
+        ['visible' => false] // 👈 set visibility to 0 (false)
+    ));
 
         $post->user()->associate($request->user());
         $post->discussion()->associate($discussion);
