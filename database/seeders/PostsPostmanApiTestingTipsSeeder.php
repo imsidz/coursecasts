@@ -16,7 +16,7 @@ class PostsPostmanApiTestingTipsSeeder extends Seeder
 
         foreach ($posts as $postData) {
             Post::create([
-                'discussion_id' => 700, // ✅ Change this if your discussion ID differs
+                'discussion_id' => 154, // ✅ Change this if your discussion ID differs
                 'user_id' => $postData['user_id'],
                 'body' => $postData['body'],
                 'visible' => $postData['visible'],
