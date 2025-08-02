@@ -1,0 +1,61 @@
+<?php
+
+return [
+    // May 2 – 5 posts
+    ['body' => 'Case Study: MLlib for real-time recommendation in e-commerce.',                   'user_id' => 150, 'visible' => true, 'created_at' => '2025-05-02 09:00:00', 'updated_at' => '2025-05-02 09:00:00'],
+    ['body' => 'Case Study: Fraud detection in financial transactions using MLlib.',              'user_id' => 151, 'visible' => true, 'created_at' => '2025-05-02 10:00:00', 'updated_at' => '2025-05-02 10:00:00'],
+    ['body' => 'Case Study: Predictive maintenance in manufacturing with MLlib.',                 'user_id' => 152, 'visible' => true, 'created_at' => '2025-05-02 11:00:00', 'updated_at' => '2025-05-02 11:00:00'],
+    ['body' => 'Case Study: Customer segmentation at scale with Spark MLlib.',                    'user_id' => 153, 'visible' => true, 'created_at' => '2025-05-02 12:00:00', 'updated_at' => '2025-05-02 12:00:00'],
+    ['body' => 'Case Study: Sentiment analysis of social media streams via MLlib.',               'user_id' => 154, 'visible' => true, 'created_at' => '2025-05-02 13:00:00', 'updated_at' => '2025-05-02 13:00:00'],
+
+    // May 11 – 10 posts
+    ['body' => 'Case Study: Click-through rate prediction using MLlib logistic regression.',      'user_id' => 155, 'visible' => true, 'created_at' => '2025-05-11 08:30:00', 'updated_at' => '2025-05-11 08:30:00'],
+    ['body' => 'Case Study: Time-series forecasting for energy consumption with MLlib.',           'user_id' => 156, 'visible' => true, 'created_at' => '2025-05-11 09:45:00', 'updated_at' => '2025-05-11 09:45:00'],
+    ['body' => 'Case Study: Disease outbreak prediction using MLlib decision trees.',             'user_id' => 157, 'visible' => true, 'created_at' => '2025-05-11 11:00:00', 'updated_at' => '2025-05-11 11:00:00'],
+    ['body' => 'Case Study: Image classification pipeline built on MLlib.',                       'user_id' => 158, 'visible' => true, 'created_at' => '2025-05-11 12:15:00', 'updated_at' => '2025-05-11 12:15:00'],
+    ['body' => 'Case Study: Real-time anomaly detection in IoT data using MLlib.',                 'user_id' => 159, 'visible' => true, 'created_at' => '2025-05-11 13:30:00', 'updated_at' => '2025-05-11 13:30:00'],
+    ['body' => 'Case Study: Churn prediction in telecom using MLlib random forests.',              'user_id' => 160, 'visible' => true, 'created_at' => '2025-05-11 14:45:00', 'updated_at' => '2025-05-11 14:45:00'],
+    ['body' => 'Case Study: MLlib for dynamic pricing in ride-sharing platforms.',                 'user_id' => 161, 'visible' => true, 'created_at' => '2025-05-11 16:00:00', 'updated_at' => '2025-05-11 16:00:00'],
+    ['body' => 'Case Study: News topic classification using MLlib Naive Bayes.',                  'user_id' => 162, 'visible' => true, 'created_at' => '2025-05-11 17:15:00', 'updated_at' => '2025-05-11 17:15:00'],
+    ['body' => 'Case Study: MLlib-based recommendation for streaming services.',                   'user_id' => 163, 'visible' => true, 'created_at' => '2025-05-11 18:30:00', 'updated_at' => '2025-05-11 18:30:00'],
+    ['body' => 'Case Study: Supply chain optimization with MLlib clustering.',                    'user_id' => 164, 'visible' => true, 'created_at' => '2025-05-11 19:45:00', 'updated_at' => '2025-05-11 19:45:00'],
+
+    // June 1 – 10 posts
+    ['body' => 'Case Study: Ad click prediction using MLlib gradient-boosted trees.',             'user_id' => 165, 'visible' => true, 'created_at' => '2025-06-01 09:15:00', 'updated_at' => '2025-06-01 09:15:00'],
+    ['body' => 'Case Study: Spam detection in emails with MLlib SVM.',                             'user_id' => 166, 'visible' => true, 'created_at' => '2025-06-01 10:30:00', 'updated_at' => '2025-06-01 10:30:00'],
+    ['body' => 'Case Study: MLlib for credit scoring in banking applications.',                    'user_id' => 167, 'visible' => true, 'created_at' => '2025-06-01 11:45:00', 'updated_at' => '2025-06-01 11:45:00'],
+    ['body' => 'Case Study: Movie recommendation engine using MLlib collaborative filtering.',     'user_id' => 168, 'visible' => true, 'created_at' => '2025-06-01 13:00:00', 'updated_at' => '2025-06-01 13:00:00'],
+    ['body' => 'Case Study: Real-time traffic prediction with MLlib streaming.',                   'user_id' => 169, 'visible' => true, 'created_at' => '2025-06-01 14:15:00', 'updated_at' => '2025-06-01 14:15:00'],
+    ['body' => 'Case Study: Personalizing marketing campaigns using MLlib.',                        'user_id' => 170, 'visible' => true, 'created_at' => '2025-06-01 15:30:00', 'updated_at' => '2025-06-01 15:30:00'],
+    ['body' => 'Case Study: MLlib for high-frequency trading signal detection.',                    'user_id' => 171, 'visible' => true, 'created_at' => '2025-06-01 16:45:00', 'updated_at' => '2025-06-01 16:45:00'],
+    ['body' => 'Case Study: Text summarization pipeline using MLlib features.',                     'user_id' => 172, 'visible' => true, 'created_at' => '2025-06-01 18:00:00', 'updated_at' => '2025-06-01 18:00:00'],
+    ['body' => 'Case Study: MLlib for network intrusion detection.',                                'user_id' => 173, 'visible' => true, 'created_at' => '2025-06-01 19:15:00', 'updated_at' => '2025-06-01 19:15:00'],
+    ['body' => 'Case Study: Product recommendation via MLlib feature engineering.',                 'user_id' => 174, 'visible' => true, 'created_at' => '2025-06-01 20:30:00', 'updated_at' => '2025-06-01 20:30:00'],
+
+    // July – 25 posts
+    ['body' => 'Case Study: MLlib-based customer lifetime value modeling.',                        'user_id' => 175, 'visible' => true, 'created_at' => '2025-07-01 09:10:00', 'updated_at' => '2025-07-01 09:10:00'],
+    ['body' => 'Case Study: MLlib for predicting equipment failure in oil & gas.',                  'user_id' => 176, 'visible' => true, 'created_at' => '2025-07-02 10:20:00', 'updated_at' => '2025-07-02 10:20:00'],
+    ['body' => 'Case Study: Real-time ad bidding predictions using MLlib.',                        'user_id' => 177, 'visible' => true, 'created_at' => '2025-07-03 11:30:00', 'updated_at' => '2025-07-03 11:30:00'],
+    ['body' => 'Case Study: Price optimization in retail using MLlib regression.',                 'user_id' => 178, 'visible' => true, 'created_at' => '2025-07-04 12:40:00', 'updated_at' => '2025-07-04 12:40:00'],
+    ['body' => 'Case Study: MLlib for healthcare patient readmission risk.',                       'user_id' => 179, 'visible' => true, 'created_at' => '2025-07-05 13:50:00', 'updated_at' => '2025-07-05 13:50:00'],
+    ['body' => 'Case Study: MLlib-based wildfire smoke detection in satellite data.',               'user_id' => 180, 'visible' => true, 'created_at' => '2025-07-06 14:00:00', 'updated_at' => '2025-07-06 14:00:00'],
+    ['body' => 'Case Study: MLlib for personalized learning in edtech platforms.',                  'user_id' => 181, 'visible' => true, 'created_at' => '2025-07-07 15:10:00', 'updated_at' => '2025-07-07 15:10:00'],
+    ['body' => 'Case Study: Real-time stock movement prediction with MLlib.',                       'user_id' => 182, 'visible' => true, 'created_at' => '2025-07-08 16:20:00', 'updated_at' => '2025-07-08 16:20:00'],
+    ['body' => 'Case Study: MLlib for anomaly detection in credit card transactions.',              'user_id' => 183, 'visible' => true, 'created_at' => '2025-07-09 17:30:00', 'updated_at' => '2025-07-09 17:30:00'],
+    ['body' => 'Case Study: Fraud risk scoring using MLlib\'s Naive Bayes.',                        'user_id' => 184, 'visible' => true, 'created_at' => '2025-07-10 18:40:00', 'updated_at' => '2025-07-10 18:40:00'],
+    ['body' => 'Case Study: MLlib for predictive text input suggestions.',                          'user_id' => 185, 'visible' => true, 'created_at' => '2025-07-11 19:50:00', 'updated_at' => '2025-07-11 19:50:00'],
+    ['body' => 'Case Study: MLlib-driven real-time translation quality assessment.',                 'user_id' => 186, 'visible' => true, 'created_at' => '2025-07-12 08:05:00', 'updated_at' => '2025-07-12 08:05:00'],
+    ['body' => 'Case Study: Power grid failure prediction with MLlib.',                             'user_id' => 187, 'visible' => true, 'created_at' => '2025-07-13 07:15:00', 'updated_at' => '2025-07-13 07:15:00'],
+    ['body' => 'Case Study: MLlib for urban traffic flow optimization.',                            'user_id' => 188, 'visible' => true, 'created_at' => '2025-07-14 06:25:00', 'updated_at' => '2025-07-14 06:25:00'],
+    ['body' => 'Case Study: MLlib-based voice recognition preprocessing.',                           'user_id' => 189, 'visible' => true, 'created_at' => '2025-07-15 05:35:00', 'updated_at' => '2025-07-15 05:35:00'],
+    ['body' => 'Case Study: MLlib for social network influence analysis.',                           'user_id' => 190, 'visible' => true, 'created_at' => '2025-07-16 04:45:00', 'updated_at' => '2025-07-16 04:45:00'],
+    ['body' => 'Case Study: MLlib-driven demand forecasting in retail.',                             'user_id' => 150, 'visible' => true, 'created_at' => '2025-07-17 03:55:00', 'updated_at' => '2025-07-17 03:55:00'],
+    ['body' => 'Case Study: MLlib for satellite image segmentation.',                                'user_id' => 151, 'visible' => true, 'created_at' => '2025-07-18 02:05:00', 'updated_at' => '2025-07-18 02:05:00'],
+    ['body' => 'Case Study: MLlib-based personalized news feeds.',                                   'user_id' => 152, 'visible' => true, 'created_at' => '2025-07-19 01:15:00', 'updated_at' => '2025-07-19 01:15:00'],
+    ['body' => 'Case Study: MLlib for real-time log anomaly detection.',                             'user_id' => 153, 'visible' => true, 'created_at' => '2025-07-20 00:25:00', 'updated_at' => '2025-07-20 00:25:00'],
+    ['body' => 'Case Study: MLlib in predicting loan defaults.',                                     'user_id' => 154, 'visible' => true, 'created_at' => '2025-07-21 23:35:00', 'updated_at' => '2025-07-21 23:35:00'],
+    ['body' => 'Case Study: MLlib for dynamic ad targeting.',                                        'user_id' => 155, 'visible' => true, 'created_at' => '2025-07-22 22:45:00', 'updated_at' => '2025-07-22 22:45:00'],
+    ['body' => 'Case Study: MLlib-powered predictive maintenance in aerospace.',                     'user_id' => 156, 'visible' => true, 'created_at' => '2025-07-23 21:55:00', 'updated_at' => '2025-07-23 21:55:00'],
+    ['body' => 'Case Study: MLlib for automated sentiment-driven trading.',                          'user_id' => 157, 'visible' => true, 'created_at' => '2025-07-24 20:05:00', 'updated_at' => '2025-07-24 20:05:00'],
+    ['body' => 'Case Study: Real-time fraud prevention with MLlib.',                                 'user_id' => 158, 'visible' => true, 'created_at' => '2025-07-25 19:15:00', 'updated_at' => '2025-07-25 19:15:00'],
+];
