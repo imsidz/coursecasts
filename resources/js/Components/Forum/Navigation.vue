@@ -32,8 +32,23 @@
         </nav>
       </div>
     </div>
+
+        <!-- Card 2: Network -->
+    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-6">
+      <div class="p-6 text-gray-900">
+        <h2 class="text-lg font-semibold mb-3">Out Network</h2>
+        
+        <ul class="space-y-2">
+          <li >
+ <a href="https://coursecasts.com/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-600">
+    Courses
+  </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   
-    <!-- Card 2: Topics -->
+    <!-- Card 3: Topics -->
     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-6">
       <div class="p-6 text-gray-900">
         <h2 class="text-lg font-semibold mb-3">Topics</h2>
